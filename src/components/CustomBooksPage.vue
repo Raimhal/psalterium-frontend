@@ -7,13 +7,13 @@
             :model-value="selectedSort"
             @update:model-value="setSelectedSort"
             :options="sortOptions"
-            @change="getBookList(owner)"
+            @change="() => getBookList(owner)"
         />
         <my-select
             :model-value="selectedGenre"
             @update:model-value="setSelectedGenresSort"
             :options="genresOptions"
-            @change="getBookList(owner)"
+            @change="() => getBookList(owner)"
         />
         <div class="d-flex align-content-center justify-content-center">
           <input type="checkbox" id="switch" v-model="reverseSort.value" :value="reverseSort.value" @change="reverseBooks" />
@@ -75,7 +75,7 @@ export default {
     }),
     reverseBooks(){
       this.clearBooks()
-      this.getBookList()
+      this.getBookList(this.owner)
     }
   },
   computed: {
