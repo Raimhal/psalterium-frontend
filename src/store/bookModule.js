@@ -112,11 +112,13 @@ export const bookModule = {
                     book.image = 'default.png'
                     commit('pushBook', book)
                     commit('clearBook')
+                    this.$router.push(`/books/${response.data}`)
                 })
                 .catch(error => {
                     rootState.errors.push(error.response.data.detail)
                 })
             await commit('setFormLoading', false)
+
         },
         async getSortedBookList({state, commit, rootState, rootGetters}, owner) {
             if(!state.isAll) {
