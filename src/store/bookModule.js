@@ -112,7 +112,7 @@ export const bookModule = {
                     book.image = 'default.png'
                     commit('pushBook', book)
                     commit('clearBook')
-                    this.$router.push(`/books/${response.data}`)
+                    router.push(`/books/${response.data}`)
                 })
                 .catch(error => {
                     rootState.errors.push(error.response.data.detail)
