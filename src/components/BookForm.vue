@@ -128,7 +128,7 @@ export default {
       return  yup.object().shape({
         name: yup.string().max(100).required().label('Title'),
         author: yup.string().max(50).required().label('Author'),
-        count: yup.number().typeError("Count is a number field").integer('Invalid decimal').min(1).required().label('Count'),
+        count: yup.number().typeError("Count is a number field").integer('Invalid decimal').min(1).max(60000).required().label('Count'),
         price: yup.number().typeError("Count is a number field").min(1).max(60000).required().label('Price'),
         ISBN: yup.string().matches('^(?=(?:\\D*\\d){10}(?:(?:\\D*\\d){3})?$)[\\d-]+$', 'Enter the correct ISBN').required().label('ISBN'),
         publication: yup.date().min(new Date(1)).required().label('Date of publication'),
