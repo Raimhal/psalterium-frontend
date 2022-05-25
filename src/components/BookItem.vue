@@ -43,7 +43,7 @@ export default {
 
 <style scoped>
 .item{
-  width: 17rem;
+  width: 20rem;
   background-color: rgba(149, 149, 149, 0.3);
   border: none;
 }
