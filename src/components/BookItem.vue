@@ -1,7 +1,7 @@
 <template>
   <div class="card item bg-gradient" :class="{ 'gray' : book.count === 0}" @click="$router.push(`/books/${book.id}`)">
     <div>
-      <img class="image" v-image-observer:[book.image]="getImage" alt="Book image">
+      <img class="image" :src="book.image" alt="Book image">
     </div>
     <div class="card-body item-body">
       <h5 class="card-title">{{book.name}}</h5>

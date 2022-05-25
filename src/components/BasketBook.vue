@@ -1,7 +1,7 @@
 <template>
   <div :key="order.id" class="d-flex justify-content-between item">
     <div>
-      <img class="image" v-image-observer:[order.image]="getImage" alt="Card image cap">
+      <img class="image" :src="order.image" alt="Card image cap">
     </div>
     <div class="short__info p-2">
       <h5 class="title">{{order.name}}</h5>
