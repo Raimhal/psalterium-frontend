@@ -27,7 +27,7 @@ export const bookModule = {
             {value: 'publication_date', name: 'By date'},
         ],
         urlCreator: window.URL || window.webkitURL,
-        isAll: false
+        isAll: false,
     }),
     getters: {
         sortedBooks(state){
@@ -139,9 +139,9 @@ export const bookModule = {
                     path += '/search'
                     params.searchQuery = state.searchQuery.value
                 }
-
                 const config = {params: params}
-                if (owner === true) {
+                console.log(owner)
+                if (owner) {
                     path += '/my'
                     config.headers = rootGetters.getHeaders
                 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom-books-page :owner="true">
+    <custom-books-page :owner=true>
       <template v-slot:title>
         <img src="@/assets/book_negate.png" height="32" width="32" class="mb-2"/>
         Your Books
