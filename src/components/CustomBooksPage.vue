@@ -15,10 +15,10 @@
             :options="genresOptions"
             @change="() => getBookList(owner)"
         />
-        <div class="d-flex align-items-center justify-content-center m-0 g-1">
+        <div class="d-flex align-items-center justify-content-center" style="gap: 0.5rem">
           <input type="checkbox" id="switch" v-model="reverseSort.value" :value="reverseSort.value" @change="reverseBooks" />
           <label for="switch"></label>
-          <p>Reverse</p>
+          <div>Reverse</div>
         </div>
       </div>
       <slot name="create"></slot>
