@@ -32,12 +32,6 @@ export default {
       default: false
     }
   },
-  methods: {
-    ...mapActions({
-      getImage: 'book/getBookImage'
-    }),
-  }
-
 }
 </script>
 

@@ -44,7 +44,6 @@ export default {
   methods: {
     ...mapActions({
       getBook: 'book/getBook',
-      getImage: 'book/getBookImage',
       removeBook: 'basket/removeFromBasket'
     }),
   }

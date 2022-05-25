@@ -126,7 +126,6 @@ export default {
   methods: {
     ...mapActions({
       getBook: 'book/getBook',
-      getImage: 'book/getBookImage',
       addToBasket: 'basket/addToBasket',
       changeImage: 'book/changeBookImage'
     }),
@@ -174,9 +173,7 @@ export default {
     },
     async changeBookImage(){
       const dialog = document.querySelector('.dialog')
-      const image = document.querySelector('.image')
       await this.changeImage()
-      await this.getImage({target: image, image_name: this.book.image})
       if(this.errors.length === 0){
         this.$swal({
           title: "<span style='color: #ffffff'>Success</span>",

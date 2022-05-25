@@ -205,31 +205,6 @@ export const bookModule = {
                     rootState.errors.push(error.response.data.detail)
                 })
         },
-        async getBookImage({state, commit, rootState}, obj){
-            const path = `${state.defaultRoot}/image`
-            const image_name = obj.image_name
-            const target = obj.target
-            if(obj.image_name !== undefined) {
-                await instance
-                    .get(path, {
-                        responseType: 'blob',
-                        params: {name: image_name}
-                    })
-                    .then(response => {
-                        const blob = new Blob(
-                            [response.data],
-                            {
-                                type: response.headers['content-type']
-                            })
-                        const url = state.urlCreator.createObjectURL(blob)
-                        target.setAttribute('src', url);
-                    })
-                    .catch(error => {
-                        console.log(error)
-                        rootState.errors.push(error)
-                    })
-            }
-        },
         async changeBookImage({state, commit, rootState}){
             await commit('setLoading', true)
             rootState.errors = []
