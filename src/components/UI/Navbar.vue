@@ -44,7 +44,7 @@
               <my-button class="p-2" :class="{'target':this.currentRoute() === '/my/books'}">
                 <img src="@/assets/book.png" height="32" width="32" />
               </my-button>
-              <span>Your books</span>
+              <span>My books</span>
             </router-link>
             <router-link to="/orders">
               <my-button class="p-2" :class="{'target':this.currentRoute() === '/orders'}">
