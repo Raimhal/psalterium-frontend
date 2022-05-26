@@ -10,8 +10,9 @@
 <script>
 export default {
   mounted() {
+    const expiredDate = localStorage.getItem('tokenExp')
 
-    if (Date.now() >= localStorage.getItem('tokenExp') * 1000) {
+    if (expiredDate && Date.now() >=  expiredDate * 1000) {
       this.$store.dispatch('logout')
       this.$swal({
         title: "<span style='color: #ffffff'>Oops...</span>",
