@@ -56,7 +56,7 @@
     </div>
     <my-dialog v-model:show="imageDialogVisible">
       <Form v-slot="{ handleSubmit }" as="div">
-        <my-error-list :errors="errors" class="text-center text-break"></my-error-list>
+        <my-error-list :errors="errors" class="text-center text-break w-100"></my-error-list>
         <form @submit="handleSubmit($event, changeBookImage)" enctype="multipart/form-data" method="post" id="uploadForm" class="form">
           <label for="files" class="label text-break mb-2" id="file_label">Select image</label>
           <my-field type="file" name="file" id="files" v-focus class="file" @change="changeFileStatus" accept="image/*" required/>
