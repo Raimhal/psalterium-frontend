@@ -151,7 +151,7 @@ export const userModule = {
                 role = 'User'
             path += `?role_name=${role}`
             await instance
-                .patch(path)
+                .patch(path, {headers: rootGetters.getHeaders})
                 .catch(error => {
                     console.log(error)
                     rootState.errors.push(error.response.data.detail)
